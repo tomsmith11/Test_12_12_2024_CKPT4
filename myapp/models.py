@@ -14,10 +14,14 @@ class Student(models.Model):
   name = models.CharField(max_length=100)
   teachers = models.ManyToManyField('Teacher', related_name='students')
 
+  def __str__(self):
+        return f"Student: {self.name}"
+
 """
 Define Teacher model
 """
 class Teacher(models.Model):
   name = models.CharField(max_length=100)
   
-
+  def __str__(self):
+        return f"Teacher: {self.name}"
